@@ -6,7 +6,7 @@
 
     <groupId>me.chickensaysbak</groupId>
     <artifactId>playerdata-to-csv</artifactId>
-    <version>1.0</version>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
 
     <inceptionYear>2023</inceptionYear>
@@ -40,6 +40,8 @@
                 <configuration>
                     <archive>
                         <manifest>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                            <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
                             <mainClass>me.chickensaysbak.playerdatatocsv.PlayerdataToCSV</mainClass>

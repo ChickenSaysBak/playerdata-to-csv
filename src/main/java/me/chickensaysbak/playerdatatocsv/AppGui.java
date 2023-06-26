@@ -15,6 +15,7 @@ import java.util.Arrays;
 
 public class AppGui {
 
+    public static final String ICON = "/icon.png";
     public static final String THEME = "/Material Darker Contrast Modified.theme.json";
     private static final int OPTION_COLUMNS = 4;
     private static final int OPTION_ROWS = 3;
@@ -29,9 +30,12 @@ public class AppGui {
 
     public AppGui() {
 
+        String version = getClass().getPackage().getImplementationVersion();
+        Image icon = Toolkit.getDefaultToolkit().createImage(PlayerdataToCSV.class.getResource(ICON));
         IntelliJTheme.setup(PlayerdataToCSV.class.getResourceAsStream(THEME));
-        frame = new JFrame("Playerdata To CSV");
-        frame.setIconImage(Toolkit.getDefaultToolkit().createImage(PlayerdataToCSV.class.getResource("/icon.png")));
+
+        frame = new JFrame("Playerdata to CSV" + (version != null ? " - " + version : ""));
+        frame.setIconImage(icon);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         frame.add(getFolderSelectionPanel(), BorderLayout.NORTH);
